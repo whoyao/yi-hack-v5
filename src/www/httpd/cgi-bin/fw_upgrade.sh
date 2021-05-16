@@ -19,7 +19,7 @@ if [ "$VAL" == "info" ] ; then
     printf "Content-type: application/json\r\n\r\n"
 
     FW_VERSION=`cat /tmp/sd/yi-hack-v5/version`
-    LATEST_FW=`/usr/bin/wget -O -  https://api.github.com/repos/alienatedsec/yi-hack-v5/releases/latest 2>&1 | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
+    LATEST_FW=`/tmp/sd/yi-hack-v5/usr/bin/wget -O -  https://api.github.com/repos/alienatedsec/yi-hack-v5/releases/latest 2>&1 | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
 
     printf "{\n"
     printf "\"%s\":\"%s\",\n" "fw_version"      "$FW_VERSION"
@@ -56,14 +56,14 @@ elif [ "$VAL" == "upgrade" ] ; then
 #        mv /tmp/sd/${MODEL_SUFFIX}_x.x.x.tgz /tmp/sd/${MODEL_SUFFIX}/${MODEL_SUFFIX}_x.x.x.tgz
         LATEST_FW="x.x.x"
     else
-        LATEST_FW=`/usr/bin/wget -O -  https://api.github.com/repos/alienatedsec/yi-hack-v5/releases/latest 2>&1 | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
+        LATEST_FW=`/tmp/sd/yi-hack-v5/usr/bin/wget -O -  https://api.github.com/repos/alienatedsec/yi-hack-v5/releases/latest 2>&1 | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
         if [ "$FW_VERSION" == "$LATEST_FW" ]; then
             printf "Content-type: text/html\r\n\r\n"
             printf "No new firmware available."
             exit
         fi
 
-        /usr/bin/wget https://github.com/alienatedsec/yi-hack-v5/releases/download/$LATEST_FW/${MODEL_SUFFIX}_${LATEST_FW}.tgz
+        /tmp/sd/yi-hack-v5/usr/bin/wget https://github.com/alienatedsec/yi-hack-v5/releases/download/$LATEST_FW/${MODEL_SUFFIX}_${LATEST_FW}.tgz
         
         if [ ! -f ${MODEL_SUFFIX}_${LATEST_FW}.tgz ]; then
             printf "Content-type: text/html\r\n\r\n"
