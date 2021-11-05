@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export PATH=${PATH}:/opt/arm-hisiv300-linux/bin
+export PATH=${PATH}:/opt/hisi-linux/x86-arm/arm-hisiv200-linux/bin
 
-export TARGET=arm-hisiv300-linux-uclibcgnueabi
-export CROSS=arm-hisiv300-linux-uclibcgnueabi
+export TARGET=arm-hisiv200-linux-gnueabi
+export CROSS=arm-hisiv200-linux-gnueabi
 export BUILD=x86_64-pc-linux-gnu
 
 export CROSSPREFIX=${CROSS}-

@@ -348,9 +348,9 @@ int DeviceBindingService::GetCapabilities(_tds__GetCapabilities *tds__GetCapabil
     }
 
 
-    for(tt__CapabilityCategory category : categories)
+    for(std::vector<tt__CapabilityCategory>::iterator iter=categories.begin(); iter != categories.end(); iter++)
     {
-        if(!tds__GetCapabilitiesResponse.Capabilities->Device && ( (category == tt__CapabilityCategory__All) || (category == tt__CapabilityCategory__Device) ) )
+        if(!tds__GetCapabilitiesResponse.Capabilities->Device && ( ((*iter) == tt__CapabilityCategory__All) || ((*iter) == tt__CapabilityCategory__Device) ) )
         {
             tds__GetCapabilitiesResponse.Capabilities->Device = soap_new_tt__DeviceCapabilities(this->soap);
             tds__GetCapabilitiesResponse.Capabilities->Device->XAddr = XAddr;
@@ -362,7 +362,7 @@ int DeviceBindingService::GetCapabilities(_tds__GetCapabilities *tds__GetCapabil
         }
 
 
-        if(!tds__GetCapabilitiesResponse.Capabilities->Media && ( (category == tt__CapabilityCategory__All) || (category == tt__CapabilityCategory__Media) ) )
+        if(!tds__GetCapabilitiesResponse.Capabilities->Media && ( ((*iter) == tt__CapabilityCategory__All) || ((*iter) == tt__CapabilityCategory__Media) ) )
         {
             tds__GetCapabilitiesResponse.Capabilities->Media  = soap_new_tt__MediaCapabilities(this->soap);
             tds__GetCapabilitiesResponse.Capabilities->Media->XAddr = XAddr;
@@ -373,7 +373,7 @@ int DeviceBindingService::GetCapabilities(_tds__GetCapabilities *tds__GetCapabil
         }
 
         if (ctx->get_ptz_node()->enable) {
-            if(!tds__GetCapabilitiesResponse.Capabilities->PTZ && ( (category == tt__CapabilityCategory__All) || (category == tt__CapabilityCategory__PTZ) ) )
+            if(!tds__GetCapabilitiesResponse.Capabilities->PTZ && ( ((*iter) == tt__CapabilityCategory__All) || ((*iter) == tt__CapabilityCategory__PTZ) ) )
             {
                 tds__GetCapabilitiesResponse.Capabilities->PTZ  = soap_new_tt__PTZCapabilities(this->soap);
                 tds__GetCapabilitiesResponse.Capabilities->PTZ->XAddr = XAddr;

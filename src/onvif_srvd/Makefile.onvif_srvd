@@ -38,7 +38,7 @@ CXXFLAGS         += -DDAEMON_NO_CLOSE_STDIO=$(DAEMON_NO_CLOSE_STDIO)
 CXXFLAGS         += -I$(COMMON_DIR)
 CXXFLAGS         += -I$(GENERATED_DIR)
 CXXFLAGS         += -I$(GSOAP_DIR) -I$(GSOAP_CUSTOM_DIR) -I$(GSOAP_PLUGIN_DIR) -I$(GSOAP_IMPORT_DIR)
-CXXFLAGS         += -std=c++11 -O2  -Wall  -pipe
+CXXFLAGS         += -std=c++0x -O2  -Wall  -pipe
 CXXFLAGS         += -DWITH_NO_C_LOCALE
 
 CXX              ?= g++
@@ -304,8 +304,8 @@ define build_openssl
     # build
     if [ ! -f openssl/libcrypto.so.1.0.0 ] || [ ! -f openssl/libssl.so.1.0.0 ]; then \
         cd openssl; \
-        CC=arm-hisiv300-linux-uclibcgnueabi-gcc ./Configure linux-generic32 && \
-        CC=arm-hisiv300-linux-uclibcgnueabi-gcc make; \
+        CC=arm-hisiv200-linux-gnueabi-gcc ./Configure linux-generic32 && \
+        CC=arm-hisiv200-linux-gnueabi-gcc make; \
         cd ..;\
     fi
 endef
