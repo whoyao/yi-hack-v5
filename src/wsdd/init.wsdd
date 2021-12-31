@@ -12,5 +12,6 @@ cd ..
 
 patch -p0 < lock_error.patch
 patch -p0 < ip_mreqn.patch
+patch -p0 < c++0x.patch
 
 cp Makefile.wsdd wsdd/Makefile

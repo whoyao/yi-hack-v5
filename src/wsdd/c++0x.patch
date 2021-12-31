@@ -1,0 +1,67 @@
+diff -Naur wsdd.ori/src/daemon.c wsdd/src/daemon.c
+--- wsdd.ori/src/daemon.c	2020-06-22 14:30:19.000000000 +0200
++++ wsdd/src/daemon.c	2020-06-22 14:29:17.000000000 +0200
+@@ -85,49 +85,49 @@
+ 
+ volatile struct daemon_info_t daemon_info =
+ {
+-    .terminated = 0,
+-    .daemonized = 0,                   //flag will be set in finale function daemonize()
++    terminated : 0,
++    daemonized : 0,                   //flag will be set in finale function daemonize()
+ 
+ 
+     #ifdef  DAEMON_NO_CHDIR
+-        .no_chdir = DAEMON_NO_CHDIR,
++        no_chdir : DAEMON_NO_CHDIR,
+     #else
+-        .no_chdir = 0,
++        no_chdir : 0,
+     #endif
+ 
+ 
+     #ifdef  DAEMON_NO_FORK
+-        .no_fork = DAEMON_NO_FORK,
++        no_fork : DAEMON_NO_FORK,
+     #else
+-        .no_fork = 0,
++        no_fork : 0,
+     #endif
+ 
+ 
+     #ifdef  DAEMON_NO_CLOSE_STDIO
+-        .no_close_stdio = DAEMON_NO_CLOSE_STDIO,
++        no_close_stdio : DAEMON_NO_CLOSE_STDIO,
+     #else
+-        .no_close_stdio = 0,
++        no_close_stdio : 0,
+     #endif
+ 
+ 
+     #ifdef  DAEMON_PID_FILE_NAME
+-        .pid_file = DAEMON_PID_FILE_NAME,
++        pid_file : DAEMON_PID_FILE_NAME,
+     #else
+-        .pid_file = NULL,
++        pid_file : NULL,
+     #endif
+ 
+ 
+     #ifdef  DAEMON_LOG_FILE_NAME
+-        .log_file = DAEMON_LOG_FILE_NAME,
++        log_file : DAEMON_LOG_FILE_NAME,
+     #else
+-        .log_file = NULL,
++        log_file : NULL,
+     #endif
+ 
+ 
+     #ifdef  DAEMON_CMD_PIPE_NAME
+-        .cmd_pipe = DAEMON_CMD_PIPE_NAME,
++        cmd_pipe : DAEMON_CMD_PIPE_NAME,
+     #else
+-        .cmd_pipe = NULL,
++        cmd_pipe : NULL,
+     #endif
+ };
+ 

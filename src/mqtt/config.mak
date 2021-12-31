@@ -15,9 +15,9 @@
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-CC=arm-hisiv200-linux-gnueabi-gcc
-USER_CFLAGS=-march=armv5te -mcpu=arm926ej-s -I/opt/hisi-linux/x86-arm/arm-hisiv200-linux/target/usr/include -L/opt/hisi-linux/x86-arm/arm-hisiv200-linux/target/usr/lib
+CC=arm-hisiv100-linux-uclibcgnueabi-gcc
+USER_CFLAGS=-march=armv5te -mcpu=arm926ej-s -I/opt/hisi-linux-nptl/arm-hisiv100-linux/target/usr/include -L/opt/hisi-linux-nptl/arm-hisiv100-linux/target/usr/lib
 USER_LDFLAGS=
-AR=arm-hisiv200-linux-gnueabi-ar
-RANLIB=arm-hisiv200-linux-gnueabi-ranlib
-STRIP=arm-hisiv200-linux-gnueabi-strip
+AR=arm-hisiv100-linux-uclibcgnueabi-ar
+RANLIB=arm-hisiv100-linux-uclibcgnueabi-ranlib
+STRIP=arm-hisiv100-linux-uclibcgnueabi-strip

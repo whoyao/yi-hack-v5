@@ -2,10 +2,10 @@
 
 ARCHIVE=live.2021.04.06.tar.gz
 
-export PATH=${PATH}:/opt/hisi-linux/x86-arm/arm-hisiv200-linux/bin
+export PATH=${PATH}:/opt/hisi-linux-nptl/arm-hisiv100-linux/bin
 
-export TARGET=arm-hisiv200-linux-gnueabi
-export CROSS=arm-hisiv200-linux-gnueabi
+export TARGET=arm-hisiv100-linux-uclibcgnueabi
+export CROSS=arm-hisiv100-linux-uclibcgnueabi
 export BUILD=x86_64-pc-linux-gnu
 
 export CROSSPREFIX=${CROSS}-

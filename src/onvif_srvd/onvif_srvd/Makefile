@@ -304,8 +304,8 @@ define build_openssl
     # build
     if [ ! -f openssl/libcrypto.so.1.0.0 ] || [ ! -f openssl/libssl.so.1.0.0 ]; then \
         cd openssl; \
-        CC=arm-hisiv200-linux-gnueabi-gcc ./Configure linux-generic32 && \
-        CC=arm-hisiv200-linux-gnueabi-gcc make; \
+        CC=arm-hisiv100-linux-uclibcgnueabi-gcc ./Configure linux-generic32 && \
+        CC=arm-hisiv100-linux-uclibcgnueabi-gcc make; \
         cd ..;\
     fi
 endef
