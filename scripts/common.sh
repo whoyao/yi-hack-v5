@@ -24,6 +24,7 @@
 
 declare -A CAMERAS
 
+CAMERAS["yi_home_720p"]="none"
 CAMERAS["yi_home"]="y18"
 CAMERAS["yi_home_1080p"]="y20"
 

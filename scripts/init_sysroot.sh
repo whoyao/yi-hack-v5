@@ -96,6 +96,8 @@ extract_stock_fw()
     local SYSROOT_DIR=$2
     local FW_DIR=$3
     
+    echo "$0 $1 $2 $3 $4 Firmware dir $FW_DIR"
+
     local FIRMWARE_HOME=$FW_DIR/home_$CAMERA_ID
     local FIRMWARE_ROOTFS=$FW_DIR/rootfs_$CAMERA_ID
     
@@ -301,6 +303,7 @@ fi
 create_sysroot_dir $CAMERA_NAME $SYSROOT_BASE_DIR
 
 echo ""
+echo "Firmware dir: $FIRMWARE_DIR"
 
 # Extract the stock fw to the camera's sysroot
 extract_stock_fw $CAMERA_ID $SYSROOT_DIR $FIRMWARE_DIR

@@ -5,9 +5,9 @@ mount -t devpts devpts /dev/pts
 
 mkdir -p /dev/.udev
 udevd --daemon
-udevadm trigger
+udevstart
 mount -t jffs2 /dev/mtdblock5 /home
 
 /home/yi-hack-v5/script/system_init.sh
-/home/base/init.sh
+/home/init.sh
 
